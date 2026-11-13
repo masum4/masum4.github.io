@@ -28,8 +28,9 @@
   requestAnimationFrame(runTc);
 
   /* ---------- work ---------- */
-  const TYPES = { film: "AI film", ad: "Ad / reel", shopify: "Shopify", web: "Website" };
+  const TYPES = { theme: "WordPress theme", film: "AI film", ad: "Ad / reel", shopify: "Shopify", web: "Website" };
   const POSTERS = {
+    theme: "radial-gradient(80% 90% at 85% 15%, #d7ff3c 0%, transparent 55%), radial-gradient(70% 80% at 0% 100%, #2b6bff 0%, transparent 60%), #0c0e12",
     film: "radial-gradient(80% 90% at 20% 20%, #ff5a36 0%, transparent 60%), radial-gradient(70% 80% at 90% 90%, #5b5bff 0%, transparent 60%), #120b14",
     ad: "radial-gradient(80% 70% at 80% 10%, #d7ff3c 0%, transparent 55%), radial-gradient(70% 70% at 10% 100%, #ff3c8e 0%, transparent 60%), #0f1210",
     shopify: "radial-gradient(90% 80% at 10% 10%, #3ddc84 0%, transparent 60%), radial-gradient(60% 70% at 100% 100%, #d7ff3c 0%, transparent 60%), #0b120e",
@@ -43,7 +44,7 @@
   const grid = $("#work-grid");
   grid.innerHTML = projects.map((p, i) => {
     const tall = p.format === "9:16";
-    const wide = false;
+    const size = p.size === "wide" ? "wide" : p.size === "half" ? "half" : "";
     const vid = ytId(p.video);
     const live = vid || p.link;
     const thumb = p.thumb || (vid ? `https://i.ytimg.com/vi/${vid}/hqdefault.jpg` : "");
@@ -51,10 +52,10 @@
       ? `<button class="card-link" data-video="${vid}" data-vertical="${tall}" aria-label="Play ${esc(p.title)}"></button>`
       : p.link ? `<a class="card-link" href="${esc(p.link)}" target="_blank" rel="noopener" aria-label="Open ${esc(p.title)}"></a>` : "";
     return `
-      <article class="card reveal ${tall ? "tall" : ""} ${wide ? "wide" : ""}" data-type="${esc(p.type)}">
+      <article class="card reveal ${tall ? "tall" : ""} ${size}" data-type="${esc(p.type)}">
         <div class="card-media">
-          ${thumb ? `<img src="${esc(thumb)}" alt="" loading="lazy" />` : `<div class="poster" style="background:${POSTERS[p.type] || POSTERS.film}"><span class="poster-label">${esc(TYPES[p.type] || "")}</span></div>`}
-          <div class="card-badges"><span class="badge">${esc(p.format || "")}</span><span class="badge ${live ? "live" : "soon"}">${live ? (vid ? "▶ Watch" : "● Live") : "In production"}</span></div>
+          ${thumb ? `<img src="${esc(thumb)}" alt="" loading="lazy" />` : `<div class="poster" style="background:${POSTERS[p.type] || POSTERS.film}"><span class="poster-label">${esc(p.poster || TYPES[p.type] || "")}</span></div>`}
+          <div class="card-badges"><span class="badge">${esc(p.format || "")}</span><span class="badge ${live ? "live" : "soon"}">${live ? esc(p.cta || (vid ? "▶ Watch" : "● Live")) : "In production"}</span></div>
           ${vid ? `<span class="play" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></span>` : ""}
         </div>
         <div class="card-body">
@@ -68,6 +69,10 @@
       </article>`;
   }).join("");
   $("#count-all").textContent = projects.length || "";
+  $$(".filters button").forEach(b => {
+    const f = b.dataset.filter;
+    if (f !== "all" && !projects.some(p => p.type === f)) b.remove();
+  });
 
   $$(".filters button").forEach(btn => btn.addEventListener("click", () => {
     $$(".filters button").forEach(b => b.setAttribute("aria-selected", b === btn));

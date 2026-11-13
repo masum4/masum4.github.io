@@ -25,19 +25,31 @@ window.SITE = {
   ],
 
   /* Projects ------------------------------------------------
-     type:   "film" | "ad" | "shopify" | "web"
-     format: "16:9" | "9:16"   (videos)   — web/shopify use "16:9"
+     type:   "theme" | "film" | "ad" | "shopify" | "web"
+     format: "16:9" | "9:16"
      video:  YouTube link (watch, youtu.be or shorts) — plays in a popup
-     link:   any live URL (store, website, Facebook post)
-     thumb:  optional image path, e.g. "assets/work/rose-cream.jpg"
-     Leave video and link empty and the card shows "In production".   */
+     link:   any live URL (ThemeForest, store, website, Facebook post)
+     cta:    optional badge text, e.g. "View on ThemeForest"
+     size:   optional "wide" (2/3 row) or "half" (1/2 row); default 1/3
+     poster: optional big word on the card when there's no thumb
+     thumb:  optional image path, e.g. "assets/work/archinex.jpg"
+     Leave video and link empty and the card shows "In production".
+     Filter buttons with no projects hide themselves.               */
   projects: [
-    { title: "Cinematic brand film", type: "film", format: "16:9", client: "Concept", tools: "Seedance · Kling · Premiere", video: "", link: "", thumb: "" },
-    { title: "Product ad for an F-commerce brand", type: "ad", format: "9:16", client: "Concept", tools: "AI model · CapCut", video: "", link: "", thumb: "" },
-    { title: "Shopify store build", type: "shopify", format: "16:9", client: "Practice store", tools: "Shopify · Dawn theme", video: "", link: "", thumb: "" },
-    { title: "UGC-style reel", type: "ad", format: "9:16", client: "Concept", tools: "AI avatar · Voiceover", video: "", link: "", thumb: "" },
-    { title: "Landing page for a launch", type: "web", format: "16:9", client: "Concept", tools: "HTML · CSS · JS", video: "", link: "", thumb: "" },
-    { title: "AI short film", type: "film", format: "9:16", client: "Personal", tools: "Veo · Suno · Premiere", video: "", link: "", thumb: "" },
+    { title: "Archinex — Architecture & Interior Design", type: "theme", format: "WordPress", size: "wide", poster: "Archinex", client: "ThemeForest", tools: "Elementor", cta: "View on ThemeForest",
+      link: "https://themeforest.net/item/archinex-modern-architecture-interior-design-wordpress-theme/65116521", thumb: "" },
+    { title: "Dinevo — Restaurant & Cafe", type: "theme", format: "WordPress", poster: "Dinevo", client: "ThemeForest", tools: "Elementor", cta: "View on ThemeForest",
+      link: "https://themeforest.net/item/dinevo-modern-restaurant-cafe-wordpress-theme/63237353", thumb: "" },
+    { title: "Orvio — Creative Agency & Portfolio", type: "theme", format: "WordPress", poster: "Orvio", client: "ThemeForest", tools: "Elementor", cta: "View on ThemeForest",
+      link: "https://themeforest.net/item/orvio-creative-agency-and-portfolio-wordpress-theme/59374477", thumb: "" },
+    { title: "Feux — Creative Digital Agency", type: "theme", format: "WordPress", poster: "Feux", client: "ThemeForest", tools: "Elementor", cta: "View on ThemeForest",
+      link: "https://themeforest.net/item/feux-creative-digital-agency-wordpress-theme/57380914", thumb: "" },
+    { title: "Unikon — Multipurpose Agency", type: "theme", format: "WordPress", poster: "Unikon", client: "ThemeForest", tools: "Elementor", cta: "View on ThemeForest",
+      link: "https://themeforest.net/item/unikon-multipurpose-agency-elementor-wordpress-theme/55397712", thumb: "" },
+    { title: "AI short story — Part 1", type: "film", format: "9:16", size: "half", poster: "Story 01", client: "Personal", tools: "AI video · Edit · Sound", cta: "▶ Watch on Facebook",
+      link: "https://www.facebook.com/share/r/1KF48nzF37/", thumb: "" },
+    { title: "AI short story — Part 2", type: "film", format: "9:16", size: "half", poster: "Story 02", client: "Personal", tools: "AI video · Edit · Sound", cta: "▶ Watch on Facebook",
+      link: "https://www.facebook.com/share/v/1X51UAtXDW/", thumb: "" },
   ],
 
   /* Starting prices are optional. Leave "" to show "Ask for a quote". */
@@ -55,9 +67,9 @@ window.SITE = {
       price: "",
     },
     {
-      id: "web", tag: "03 / Web", title: "Websites & landing pages",
-      blurb: "Fast, mobile-first pages for launches, personal brands and small businesses.",
-      items: ["Landing pages", "Portfolio & business sites", "Speed & SEO basics", "Deploy + domain setup"],
+      id: "web", tag: "03 / Web", title: "WordPress themes & websites",
+      blurb: "I design and build premium WordPress themes sold on ThemeForest — and custom sites for businesses.",
+      items: ["Custom WordPress & Elementor sites", "Theme customisation & setup", "Landing pages", "Speed, SEO basics & deploy"],
       price: "",
     },
   ],
