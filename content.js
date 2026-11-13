@@ -12,16 +12,15 @@ window.SITE = {
 
   contact: {
     email: "",                  // e.g. "hello@yourmail.com"
-    whatsapp: "",               // international format, digits only: "8801XXXXXXXXX"
-    whatsappLabel: "",          // how it's shown: "+880 1XXX-XXXXXX"
+    whatsapp: "8801784065730",  // international format, digits only
+    whatsappLabel: "+880 1784-065730",
   },
 
   socials: [
+    { label: "Facebook",  url: "https://www.facebook.com/masum.khandakar4/" },
+    { label: "LinkedIn",  url: "https://www.linkedin.com/in/masum4/" },
+    { label: "Instagram", url: "https://www.instagram.com/mh_masum57/" },
     // { label: "YouTube",   url: "https://youtube.com/@..." },
-    // { label: "Facebook",  url: "https://facebook.com/..." },
-    // { label: "Instagram", url: "https://instagram.com/..." },
-    // { label: "LinkedIn",  url: "https://linkedin.com/in/..." },
-    // { label: "GitHub",    url: "https://github.com/..." },
   ],
 
   /* Projects ------------------------------------------------
