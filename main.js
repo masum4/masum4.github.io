@@ -8,6 +8,12 @@
   /* ---------- basics ---------- */
   $("#year").textContent = new Date().getFullYear();
   if (S.location) { $("#loc-label").textContent = "in " + S.location; $("#fact-loc").textContent = S.location; }
+  if (S.photo) {
+    const scr = $(".vf-screen");
+    scr.innerHTML = `<img class="vf-photo" src="${esc(S.photo)}" alt="Portrait of ${esc(S.name || "")}" />`;
+    $(".viewfinder").classList.add("has-photo");
+    $(".viewfinder").removeAttribute("aria-hidden");
+  }
   if (S.available === false) { $("#status-dot").classList.add("off"); $("#status-text").textContent = "Booked right now"; }
 
   const tick = () => {

@@ -9,9 +9,10 @@ window.SITE = {
   location: "Bangladesh",
   timezone: "Asia/Dhaka",       // used for the live local-time clock
   available: true,              // green "Available for projects" badge
+  photo: "",                    // your portrait, e.g. "assets/me.jpg" — shows inside the hero camera frame
 
   contact: {
-    email: "",                  // e.g. "hello@yourmail.com"
+    email: "masumkhandakar4@gmail.com",
     whatsapp: "8801784065730",  // international format, digits only
     whatsappLabel: "+880 1784-065730",
   },
