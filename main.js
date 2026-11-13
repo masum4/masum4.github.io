@@ -21,7 +21,7 @@
   const tc = $("#timecode"); const t0 = performance.now();
   const pad = n => String(n).padStart(2, "0");
   const runTc = now => {
-    const ms = now - t0, f = Math.floor((ms % 1000) / (1000 / 24)), s = Math.floor(ms / 1000);
+    const ms = Math.max(0, now - t0), f = Math.floor((ms % 1000) / (1000 / 24)), s = Math.floor(ms / 1000);
     tc.textContent = `${pad(Math.floor(s / 3600))}:${pad(Math.floor(s / 60) % 60)}:${pad(s % 60)}:${pad(f)}`;
     if (!reduce) requestAnimationFrame(runTc);
   };
@@ -55,7 +55,7 @@
       <article class="card reveal ${tall ? "tall" : ""} ${size}" data-type="${esc(p.type)}">
         <div class="card-media">
           ${thumb ? `<img src="${esc(thumb)}" alt="" loading="lazy" />` : `<div class="poster" style="background:${POSTERS[p.type] || POSTERS.film}"><span class="poster-label">${esc(p.poster || TYPES[p.type] || "")}</span></div>`}
-          <div class="card-badges"><span class="badge">${esc(p.format || "")}</span><span class="badge ${live ? "live" : "soon"}">${live ? esc(p.cta || (vid ? "▶ Watch" : "● Live")) : "In production"}</span></div>
+          ${thumb ? "" : `<div class="card-badges"><span class="badge">${esc(p.format || "")}</span><span class="badge ${live ? "live" : "soon"}">${live ? esc(p.cta || (vid ? "▶ Watch" : "● Live")) : "In production"}</span></div>`}
           ${vid ? `<span class="play" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></span>` : ""}
         </div>
         <div class="card-body">
