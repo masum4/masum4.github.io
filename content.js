@@ -48,6 +48,9 @@ window.SITE = {
     { title: "AI trading platform — landing page", type: "web", format: "WordPress", size: "half", poster: "Landing page", client: "Client · UAE", tools: "WordPress · Brand assets", cta: "Client project",
       summary: "Landing page, logo files and launch setup: hosting, domain, business email and a WhatsApp contact button.", link: "", thumb: "" },
     /* Ads: concept work is labelled as concept, never as a client job. */
+    { title: "ASTRAVEL · Espresso No. 7", type: "ad", format: "9:16", poster: "Astravel", client: "Concept ad", tools: "AI video · Beat-synced edit · Motion graphics · Original music", cta: "▶ Watch",
+      summary: "A 20-second coffee ad for a fictional roaster: 10 AI shots, whip cuts on the beat, slam type, product callouts and an animated call to action.",
+      video: "assets/video/astravel.mp4", thumb: "assets/work/astravel.png" },
     { title: "EMBER & DUNE · Oud de Nuit", type: "ad", format: "9:16", poster: "Ember & Dune", client: "Concept ad", tools: "AI video · Edit · Motion graphics · Sound", cta: "▶ Watch",
       summary: "A 15-second luxury perfume ad for a fictional oud brand: product design, AI shots, edit, original music and end card.",
       video: "assets/video/ember-dune.mp4", thumb: "assets/work/ember-dune.png" },
