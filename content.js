@@ -25,7 +25,8 @@ window.SITE = {
   ],
 
   /* Projects ------------------------------------------------
-     type:   "theme" | "film" | "ad" | "shopify" | "web"
+     type:   "theme" | "film" | "ad" | "store" | "web"
+     summary: optional one-line case study shown on the card
      format: "16:9" | "9:16"
      video:  YouTube link (watch, youtu.be or shorts) — plays in a popup
      link:   any live URL (ThemeForest, store, website, Facebook post)
@@ -36,6 +37,16 @@ window.SITE = {
      Leave video and link empty and the card shows "In production".
      Filter buttons with no projects hide themselves.               */
   projects: [
+    /* Client work: titles name the industry, not the client.
+       Add link: "https://..." only once the client is happy to be shown. */
+    { title: "Football gear shop — WooCommerce redesign", type: "store", format: "WooCommerce", size: "half", poster: "Shop redesign", client: "Client · Germany", tools: "WooCommerce · Elementor", cta: "Client project",
+      summary: "Put a 17-screen redesign onto a live German store without closing it, cut unneeded plugins for speed, and left pages the owner can edit himself.", link: "", thumb: "" },
+    { title: "Tech expo — exhibitor booking site", type: "store", format: "WooCommerce", size: "half", poster: "Expo booking", client: "Client · Australia", tools: "WooCommerce · Stripe · Custom plugin", cta: "Client project",
+      summary: "One-page event site with paid exhibitor packages, limited slots with live counters, bank-transfer holds and a settings screen the organiser runs alone.", link: "", thumb: "" },
+    { title: "Visa agency — SEO & WordPress clean-up", type: "web", format: "WordPress", size: "half", poster: "SEO audit", client: "Client · Switzerland", tools: "WordPress · Yoast · Elementor", cta: "Client project",
+      summary: "SEO audit, then the fixes on the live site: indexing, titles and headings, dead links, redirects and a WhatsApp-first landing page for their main market.", link: "", thumb: "" },
+    { title: "AI trading platform — landing page", type: "web", format: "WordPress", size: "half", poster: "Landing page", client: "Client · UAE", tools: "WordPress · Brand assets", cta: "Client project",
+      summary: "Landing page, logo files and launch setup: hosting, domain, business email and a WhatsApp contact button.", link: "", thumb: "" },
     { title: "Archinex — Architecture & Interior Design", type: "theme", format: "WordPress", poster: "Archinex", client: "ThemeForest", tools: "Elementor", cta: "View on ThemeForest",
       link: "https://themeforest.net/item/archinex-modern-architecture-interior-design-wordpress-theme/65116521", thumb: "assets/work/archinex.png" },
     { title: "Dinevo — Restaurant & Cafe", type: "theme", format: "WordPress", poster: "Dinevo", client: "ThemeForest", tools: "Elementor", cta: "View on ThemeForest",
@@ -55,29 +66,34 @@ window.SITE = {
   /* Starting prices are optional. Leave "" to show "Ask for a quote". */
   services: [
     {
-      id: "video", tag: "01 / Motion", title: "AI video & ad films",
-      blurb: "Scroll-stopping ads, product films and reels — script, AI generation, edit, sound and delivery.",
-      items: ["TVC-style brand films (16:9)", "Facebook / Instagram ads (9:16)", "UGC & avatar videos", "Reels, Shorts & TikTok edits"],
+      id: "video", tag: "01 / Motion", title: "AI films & video editing",
+      blurb: "Scroll-stopping ads, AI films and clean edits — script, AI generation, edit, sound and delivery.",
+      items: ["AI ad films & brand stories (16:9)", "Facebook / Instagram ads (9:16)", "Video editing — YouTube, reels, podcasts", "Reels, Shorts & TikTok edits"],
       price: "",
     },
     {
-      id: "shopify", tag: "02 / Commerce", title: "Shopify stores",
-      blurb: "Stores that are ready to sell on day one — products, variants, shipping, payments and a clean theme.",
-      items: ["Store setup from zero", "Theme customisation", "Product pages that convert", "Shipping, tax & payment setup"],
+      id: "store", tag: "02 / Commerce", title: "WooCommerce & Shopify stores",
+      blurb: "Stores that are ready to sell on day one — products, variants, shipping, payments and a fast, clean design.",
+      items: ["WooCommerce stores from zero", "Redesigns of live stores — no downtime", "Shopify setup & theme customisation", "Payments, shipping, tax & speed"],
       price: "",
     },
     {
-      id: "web", tag: "03 / Web", title: "WordPress themes & websites",
-      blurb: "I design and build premium WordPress themes sold on ThemeForest — and custom sites for businesses.",
-      items: ["Custom WordPress & Elementor sites", "Theme customisation & setup", "Landing pages", "Speed, SEO basics & deploy"],
+      id: "web", tag: "03 / Web", title: "Websites & WordPress",
+      blurb: "Custom business sites and landing pages — from the same hands that build premium themes for ThemeForest.",
+      items: ["Custom WordPress & Elementor sites", "Landing pages that convert", "SEO fixes & site clean-up", "Hosting, domain, email & deploy"],
       price: "",
     },
   ],
 
+  /* Client reviews. Paste them word for word. Leave the list empty to hide the section.
+     { quote: "...", name: "First name", where: "Germany · WooCommerce redesign" } */
+  testimonials: [],
+
   faq: [
+    { q: "WooCommerce or Shopify — which should I pick?", a: "WooCommerce if you want to own everything and avoid monthly app fees; Shopify if you want the simplest hosted setup. Tell me your products and budget and I'll recommend one honestly." },
     { q: "How long does an ad video take?", a: "A 15–30 second ad usually takes 2–4 days from approved script to final file. Rush delivery is possible for small edits." },
     { q: "Do you write the script too?", a: "Yes. Send your product and your goal; I write the hook, script and shot list, and you approve it before anything is generated." },
-    { q: "Can you build the store AND make the launch videos?", a: "That's the point. The Launch Kit combines a Shopify store with matching ad creatives, so the brand looks the same from the ad to the checkout." },
+    { q: "Can you build the store AND make the launch videos?", a: "That's the point. The Launch Kit combines a WooCommerce or Shopify store with matching ad creatives, so the brand looks the same from the ad to the checkout." },
     { q: "How many revisions do I get?", a: "Two rounds of revisions are included on every project. Small text or music changes don't count as a round." },
     { q: "How do we pay?", a: "50% to start, 50% on delivery. bKash, Nagad and bank transfer for local clients; Payoneer or Wise for international." },
   ],

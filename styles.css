@@ -347,3 +347,10 @@ h2 em, h1 em { color: var(--text); }
 @media (max-width: 1020px) {
   .viewfinder.has-photo { aspect-ratio: 4 / 5; max-width: 460px; width: 100%; }
 }
+
+/* ---------- case-study summary + reviews ---------- */
+.card-summary { margin: 10px 0 0; color: var(--muted); font-size: 14.5px; line-height: 1.5; max-width: 52ch; }
+.reviews { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px; }
+.review { margin: 0; padding: 28px; border: 1px solid var(--line); border-radius: 20px; background: var(--bg-2); display: flex; flex-direction: column; justify-content: space-between; gap: 20px; }
+.review blockquote { margin: 0; font-family: var(--serif); font-size: clamp(20px, 1.8vw, 24px); line-height: 1.3; }
+.review figcaption { font-size: 14px; }

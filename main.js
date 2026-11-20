@@ -34,11 +34,12 @@
   requestAnimationFrame(runTc);
 
   /* ---------- work ---------- */
-  const TYPES = { theme: "WordPress theme", film: "AI film", ad: "Ad / reel", shopify: "Shopify", web: "Website" };
+  const TYPES = { theme: "WordPress theme", film: "AI film", ad: "Ad / reel", store: "Online store", shopify: "Online store", web: "Website" };
   const POSTERS = {
     theme: "radial-gradient(80% 90% at 85% 15%, #d7ff3c 0%, transparent 55%), radial-gradient(70% 80% at 0% 100%, #2b6bff 0%, transparent 60%), #0c0e12",
     film: "radial-gradient(80% 90% at 20% 20%, #ff5a36 0%, transparent 60%), radial-gradient(70% 80% at 90% 90%, #5b5bff 0%, transparent 60%), #120b14",
     ad: "radial-gradient(80% 70% at 80% 10%, #d7ff3c 0%, transparent 55%), radial-gradient(70% 70% at 10% 100%, #ff3c8e 0%, transparent 60%), #0f1210",
+    store: "radial-gradient(90% 80% at 10% 10%, #3ddc84 0%, transparent 60%), radial-gradient(60% 70% at 100% 100%, #d7ff3c 0%, transparent 60%), #0b120e",
     shopify: "radial-gradient(90% 80% at 10% 10%, #3ddc84 0%, transparent 60%), radial-gradient(60% 70% at 100% 100%, #d7ff3c 0%, transparent 60%), #0b120e",
     web: "radial-gradient(80% 80% at 90% 10%, #5b9bff 0%, transparent 60%), radial-gradient(60% 60% at 0% 100%, #ff5a36 0%, transparent 60%), #0b0d14",
   };
@@ -61,13 +62,14 @@
       <article class="card reveal ${tall ? "tall" : ""} ${size}" data-type="${esc(p.type)}">
         <div class="card-media">
           ${thumb ? `<img src="${esc(thumb)}" alt="" loading="lazy" />` : `<div class="poster" style="background:${POSTERS[p.type] || POSTERS.film}"><span class="poster-label">${esc(p.poster || TYPES[p.type] || "")}</span></div>`}
-          ${thumb ? "" : `<div class="card-badges"><span class="badge">${esc(p.format || "")}</span><span class="badge ${live ? "live" : "soon"}">${live ? esc(p.cta || (vid ? "▶ Watch" : "● Live")) : "In production"}</span></div>`}
+          ${thumb ? "" : `<div class="card-badges"><span class="badge">${esc(p.format || "")}</span><span class="badge ${live ? "live" : "soon"}">${live ? esc(p.cta || (vid ? "▶ Watch" : "● Live")) : esc(p.cta || "In production")}</span></div>`}
           ${vid ? `<span class="play" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></span>` : ""}
         </div>
         <div class="card-body">
           <div>
             <h3>${esc(p.title)}</h3>
             <p class="card-meta">${esc([TYPES[p.type], p.client, p.tools].filter(Boolean).join(" · "))}</p>
+            ${p.summary ? `<p class="card-summary">${esc(p.summary)}</p>` : ""}
           </div>
           ${live ? `<span class="card-arrow" aria-hidden="true">→</span>` : ""}
         </div>
@@ -108,6 +110,15 @@
       <ul>${(s.items || []).map(i => `<li>${esc(i)}</li>`).join("")}</ul>
       <p class="price">${s.price ? `Starting at <b>${esc(s.price)}</b>` : "Ask for a quote →"}</p>
     </article>`).join("");
+
+  /* ---------- reviews ---------- */
+  const T = S.testimonials || [];
+  if (T.length) {
+    $("#reviews").hidden = false;
+    $("#reviews-list").innerHTML = T.map(t => `
+      <figure class="review reveal"><blockquote>“${esc(t.quote)}”</blockquote>
+      <figcaption><strong>${esc(t.name)}</strong>${t.where ? ` <span class="dim">· ${esc(t.where)}</span>` : ""}</figcaption></figure>`).join("");
+  }
 
   /* ---------- faq ---------- */
   $("#faq-list").innerHTML = (S.faq || []).map(f => `
