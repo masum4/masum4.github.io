@@ -52,18 +52,21 @@
   grid.innerHTML = projects.map((p, i) => {
     const tall = p.format === "9:16";
     const size = p.size === "wide" ? "wide" : p.size === "half" ? "half" : "";
-    const vid = ytId(p.video);
-    const live = vid || p.link;
+    const mp4 = /\.mp4$/i.test(p.video || "") ? p.video : null; // self-hosted clip, plays in the popup
+    const vid = mp4 ? null : ytId(p.video);
+    const playable = vid || mp4;
+    const live = playable || p.link;
     const thumb = p.thumb || (vid ? `https://i.ytimg.com/vi/${vid}/hqdefault.jpg` : "");
     const action = vid
       ? `<button class="card-link" data-video="${vid}" data-vertical="${tall}" aria-label="Play ${esc(p.title)}"></button>`
+      : mp4 ? `<button class="card-link" data-mp4="${esc(mp4)}" data-vertical="${tall}" aria-label="Play ${esc(p.title)}"></button>`
       : p.link ? `<a class="card-link" href="${esc(p.link)}" target="_blank" rel="noopener" aria-label="Open ${esc(p.title)}"></a>` : "";
     return `
       <article class="card reveal ${tall ? "tall" : ""} ${size}" data-type="${esc(p.type)}">
         <div class="card-media">
           ${thumb ? `<img src="${esc(thumb)}" alt="" loading="lazy" />` : `<div class="poster" style="background:${POSTERS[p.type] || POSTERS.film}"><span class="poster-label">${esc(p.poster || TYPES[p.type] || "")}</span></div>`}
           ${thumb ? "" : `<div class="card-badges"><span class="badge">${esc(p.format || "")}</span><span class="badge ${live ? "live" : "soon"}">${live ? esc(p.cta || (vid ? "▶ Watch" : "● Live")) : esc(p.cta || "In production")}</span></div>`}
-          ${vid ? `<span class="play" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></span>` : ""}
+          ${playable ? `<span class="play" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></span>` : ""}
         </div>
         <div class="card-body">
           <div>
@@ -92,9 +95,11 @@
   const modal = $("#modal"), frame = $("#modal-frame");
   const closeModal = () => { frame.innerHTML = ""; modal.close(); };
   grid.addEventListener("click", e => {
-    const b = e.target.closest("[data-video]"); if (!b) return;
+    const b = e.target.closest("[data-video],[data-mp4]"); if (!b) return;
     modal.classList.toggle("vertical", b.dataset.vertical === "true");
-    frame.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.video}?autoplay=1&rel=0" title="Video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+    frame.innerHTML = b.dataset.mp4
+      ? `<video src="${esc(b.dataset.mp4)}" controls autoplay playsinline preload="metadata"></video>`
+      : `<iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.video}?autoplay=1&rel=0" title="Video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
     modal.showModal();
   });
   $("#modal-close").addEventListener("click", closeModal);

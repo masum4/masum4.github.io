@@ -47,6 +47,11 @@ window.SITE = {
       summary: "SEO audit, then the fixes on the live site: indexing, titles and headings, dead links, redirects and a WhatsApp-first landing page for their main market.", link: "", thumb: "" },
     { title: "AI trading platform — landing page", type: "web", format: "WordPress", size: "half", poster: "Landing page", client: "Client · UAE", tools: "WordPress · Brand assets", cta: "Client project",
       summary: "Landing page, logo files and launch setup: hosting, domain, business email and a WhatsApp contact button.", link: "", thumb: "" },
+    /* Ads: concept work is labelled as concept, never as a client job. */
+    { title: "EMBER & DUNE · Oud de Nuit", type: "ad", format: "9:16", poster: "Ember & Dune", client: "Concept ad", tools: "AI video · Edit · Motion graphics · Sound", cta: "▶ Watch",
+      summary: "A 15-second luxury perfume ad for a fictional oud brand: product design, AI shots, edit, original music and end card.",
+      video: "assets/video/ember-dune.mp4", thumb: "assets/work/ember-dune.png" },
+
     /* Films and edits: newest first. */
     { title: "Grand Theft Manual — Dhaka edition", type: "film", format: "9:16", poster: "Grand Theft Manual", client: "Clips & song: The Khalid Way", tools: "Edit · Music video", cta: "▶ Watch on Facebook",
       link: "https://www.facebook.com/reel/2939809759699478", thumb: "assets/work/grand-theft-manual.png" },
