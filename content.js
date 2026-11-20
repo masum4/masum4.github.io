@@ -47,6 +47,16 @@ window.SITE = {
       summary: "SEO audit, then the fixes on the live site: indexing, titles and headings, dead links, redirects and a WhatsApp-first landing page for their main market.", link: "", thumb: "" },
     { title: "AI trading platform — landing page", type: "web", format: "WordPress", size: "half", poster: "Landing page", client: "Client · UAE", tools: "WordPress · Brand assets", cta: "Client project",
       summary: "Landing page, logo files and launch setup: hosting, domain, business email and a WhatsApp contact button.", link: "", thumb: "" },
+    /* Films and edits: newest first. */
+    { title: "Grand Theft Manual — Dhaka edition", type: "film", format: "9:16", poster: "Grand Theft Manual", client: "Clips & song: The Khalid Way", tools: "Edit · Music video", cta: "▶ Watch on Facebook",
+      link: "https://www.facebook.com/reel/2939809759699478", thumb: "assets/work/grand-theft-manual.png" },
+    { title: "7:00 AM", type: "film", format: "9:16", poster: "7:00 AM", client: "Personal · Made with VOSU", tools: "Story · AI video · Edit · Sound", cta: "▶ Watch on Facebook",
+      summary: "Every day at 7:00 AM, the same alarm. Until one day he took the watch off.",
+      link: "https://www.facebook.com/reel/914210741658470", thumb: "assets/work/7am.png" },
+    { title: "Kalpurush (কালপুরুষ)", type: "film", format: "9:16", poster: "Kalpurush", client: "Personal", tools: "Story · AI video · Edit", cta: "▶ Watch on Facebook",
+      summary: "A fictional Bangla short film inspired by real events.",
+      link: "https://www.facebook.com/reel/1862259908100611", thumb: "assets/work/kalpurush.png" },
+
     { title: "Archinex — Architecture & Interior Design", type: "theme", format: "WordPress", poster: "Archinex", client: "ThemeForest", tools: "Elementor", cta: "View on ThemeForest",
       link: "https://themeforest.net/item/archinex-modern-architecture-interior-design-wordpress-theme/65116521", thumb: "assets/work/archinex.png" },
     { title: "Dinevo — Restaurant & Cafe", type: "theme", format: "WordPress", poster: "Dinevo", client: "ThemeForest", tools: "Elementor", cta: "View on ThemeForest",
@@ -57,10 +67,6 @@ window.SITE = {
       link: "https://themeforest.net/item/feux-creative-digital-agency-wordpress-theme/57380914", thumb: "assets/work/feux.png" },
     { title: "Unikon — Multipurpose Agency", type: "theme", format: "WordPress", size: "half", poster: "Unikon", client: "ThemeForest", tools: "Elementor", cta: "View on ThemeForest",
       link: "https://themeforest.net/item/unikon-multipurpose-agency-elementor-wordpress-theme/55397712", thumb: "assets/work/unikon.png" },
-    { title: "AI short story — Part 1", type: "film", format: "9:16", size: "half", poster: "Story 01", client: "Personal", tools: "AI video · Edit · Sound", cta: "▶ Watch on Facebook",
-      link: "https://www.facebook.com/share/r/1KF48nzF37/", thumb: "" },
-    { title: "AI short story — Part 2", type: "film", format: "9:16", size: "half", poster: "Story 02", client: "Personal", tools: "AI video · Edit · Sound", cta: "▶ Watch on Facebook",
-      link: "https://www.facebook.com/share/v/1X51UAtXDW/", thumb: "" },
   ],
 
   /* Starting prices are optional. Leave "" to show "Ask for a quote". */
