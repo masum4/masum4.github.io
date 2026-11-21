@@ -48,6 +48,9 @@ window.SITE = {
     { title: "AI trading platform — landing page", type: "web", format: "WordPress", size: "half", poster: "Landing page", client: "Client · UAE", tools: "WordPress · Brand assets", cta: "Client project",
       summary: "Landing page, logo files and launch setup: hosting, domain, business email and a WhatsApp contact button.", link: "", thumb: "" },
     /* Ads: concept work is labelled as concept, never as a client job. */
+    { title: "ZAHRAEL · The Eid Edit", type: "ad", format: "9:16", poster: "Zahrael", client: "Concept ad", tools: "Consistent AI model · Fashion edit · Motion graphics · Original music", cta: "▶ Watch",
+      summary: "A 20-second abaya lookbook for a fictional label: one model across three looks, fabric-wipe transitions, editorial labels and a three-look split screen.",
+      video: "assets/video/zahrael.mp4", thumb: "assets/work/zahrael.png" },
     { title: "ASTRAVEL · Espresso No. 7", type: "ad", format: "9:16", poster: "Astravel", client: "Concept ad", tools: "AI video · Beat-synced edit · Motion graphics · Original music", cta: "▶ Watch",
       summary: "A 20-second coffee ad for a fictional roaster: 10 AI shots, whip cuts on the beat, slam type, product callouts and an animated call to action.",
       video: "assets/video/astravel.mp4", thumb: "assets/work/astravel.png" },
