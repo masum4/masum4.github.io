@@ -48,6 +48,9 @@ window.SITE = {
     { title: "AI trading platform — landing page", type: "web", format: "WordPress", size: "half", poster: "Landing page", client: "Client · UAE", tools: "WordPress · Brand assets", cta: "Client project",
       summary: "Landing page, logo files and launch setup: hosting, domain, business email and a WhatsApp contact button.", link: "", thumb: "" },
     /* Ads: concept work is labelled as concept, never as a client job. */
+    { title: "DEWLAND · Kakadu C Serum", type: "ad", format: "9:16", poster: "Dewland", client: "Concept ad", tools: "AI video · Match-cut edit · Motion graphics · AI music · Sound design", cta: "▶ Watch",
+      summary: "A 20-second clean-beauty skincare ad for a fictional Australian brand: close-up textures, a juice-drop-to-bottle match cut, ingredient labels and a 4-version ad set (A/B openings, 6s, 4:5).",
+      video: "assets/video/dewland.mp4", thumb: "assets/work/dewland.png" },
     { title: "ZAHRAEL · The Eid Edit", type: "ad", format: "9:16", poster: "Zahrael", client: "Concept ad", tools: "Consistent AI model · Fashion edit · Motion graphics · Original music", cta: "▶ Watch",
       summary: "A 20-second abaya lookbook for a fictional label: one model across three looks, fabric-wipe transitions, editorial labels and a three-look split screen.",
       video: "assets/video/zahrael.mp4", thumb: "assets/work/zahrael.png" },
