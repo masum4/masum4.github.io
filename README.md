@@ -1,4 +1,4 @@
-# Masum Khandakar — Portfolio
+# Mehedi Hasan Masum — Portfolio
 
 AI video & ad films · Shopify stores · Websites.
 

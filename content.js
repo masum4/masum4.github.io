@@ -4,7 +4,7 @@
    Leave a value as "" to hide it.
    ========================================================= */
 window.SITE = {
-  name: "Masum Khandakar",
+  name: "Mehedi Hasan Masum",
   shortName: "Masum",
   location: "Bangladesh",
   timezone: "Asia/Dhaka",       // used for the live local-time clock
